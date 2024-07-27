@@ -11,9 +11,6 @@ out/
 
 
 # Dotenv file
-broadcast/
-lib/forge-std
-lib/openzeppelin-contracts
-lib/openzeppelin-contracts-upgradeable
-lib/openzeppelin-foundry-upgrades
 .env
+broadcast/
+lib/
