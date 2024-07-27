@@ -12,5 +12,9 @@ out/
 
 # Dotenv file
 .env
+
+# Broadcast directory
 broadcast/
+
+# Libraries
 lib/
