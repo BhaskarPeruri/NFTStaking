@@ -1,39 +1,40 @@
-# <h1 align="center"> Forge Template </h1>
 
-**Template repository for getting started quickly with Foundry projects**
+# NFTStaking
 
-![Github Actions](https://github.com/foundry-rs/forge-template/workflows/CI/badge.svg)
+## Summary of the Protocol
 
-## Getting Started
+This protocol allows users to stake their NFTs (Non-Fungible Tokens) and earn ERC20 token rewards over time.
 
-Click "Use this template" on [GitHub](https://github.com/foundry-rs/forge-template) to create a new repository with this repo as the initial state.
+This protocol incentivizes users to stake their NFTs by offering token rewards, while also providing flexibility in staking management and security measures to protect both users and the protocol itself.
 
-Or, if your repo already exists, run:
-```sh
-forge init
+For more please refer to [this](https://drive.google.com/file/d/1r3Norn1lS3TLrk4wuWq0Fc5JPRwXIaEV/view?usp=sharing) 
+
+
+### To install all dependencies
+```
+make install
+
+```
+
+### To compile all the contracts
+```
 forge build
-forge test
+
 ```
 
-## Writing your first test
 
-All you need is to `import forge-std/Test.sol` and then inherit it from your test contract. Forge-std's Test contract comes with a pre-instatiated [cheatcodes environment](https://book.getfoundry.sh/cheatcodes/), the `vm`. It also has support for [ds-test](https://book.getfoundry.sh/reference/ds-test.html)-style logs and assertions. Finally, it supports Hardhat's [console.log](https://github.com/brockelmore/forge-std/blob/master/src/console.sol). The logging functionalities require `-vvvv`.
+### To see the tests coverage
 
-```solidity
-pragma solidity 0.8.10;
-
-import "forge-std/Test.sol";
-
-contract ContractTest is Test {
-    function testExample() public {
-        vm.roll(100);
-        console.log(1);
-        emit log("hi");
-        assertTrue(true);
-    }
-}
+```
+forge coverage
 ```
 
-## Development
 
-This project uses [Foundry](https://getfoundry.sh). See the [book](https://book.getfoundry.sh/getting-started/installation.html) for instructions on how to install and use Foundry.
+### To deploy on testnet 
+
+```
+forge script scripts/DeployNFTStaking.s.sol:DeployNFTStaking --rpc-url $SEPOLIA_RPC_URL --broadcast --legacy
+
+```
+#### Note: Make sure to add your configurations in .env file
+
